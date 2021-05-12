@@ -5,12 +5,50 @@
 	<title>Home - Cliente</title>
 </head>
 <body>
-	<form action="listarTodos.php">
-		<input type="submit" name="Op" value="cadastrar"> Cadastrar
-		<input type="submit" name="Op" value="atualizar"> Atualizar
-		<input type="submit" name="Op" value="listarTodos"> Listar
-		<input type="submit" name="Op" value="listarUm"> Buscar
-		<input type="submit" name="Op" value="deletar"> Remover
-	</form>
+
+	<button type="button" onclick="redirect('cadastrar')">cadastrar</button>
+	<br><br>
+	<button type="button" onclick="redirect('atualizar')">atualizar</button>
+	<br><br>
+	<button type="button" onclick="redirect('listar')">listar</button>
+	<br><br>
+	<button type="button" onclick="redirect('buscar')">buscar</button>
+	<br><br>
+	<button type="button" onclick="redirect('remover')">remover</button>
+
 </body>
+
+<script>
+	function redirect(value){
+
+		switch(value){
+
+			case "cadastrar":
+
+				location.assign("/CRUDAV1/cadastrarCliente.html");
+			break;
+
+			case "atualizar":
+
+				location.assign("/CRUDAV1/atualizarCliente.html");
+			break;
+
+			case "listar":
+
+				location.assign("/CRUDAV1/listarCliente.html");
+			break;
+
+			case "buscar":
+
+				location.assign("/CRUDAV1/buscarCliente.html");
+			break;
+
+			case "remover":
+
+				location.assign("/CRUDAV1/removerCliente.html");
+			break;
+		}
+	}
+</script>
+
 </html>
