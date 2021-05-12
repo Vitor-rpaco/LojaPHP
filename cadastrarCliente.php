@@ -19,8 +19,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$cidade = $_POST["cidade"];
 	$estado = $_POST["estado"];
 
-	
-	
+	//Pattern para Regexes
+	$patternCPF = "/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/";
+	$patternCEP = "/^[0-9][0-9][0-9][0-9][0-9]-[0-9]{3}$/";
+
 	//Fazer verificação
 	$nomeValido = 0;
 	$cpfValido = 0;
@@ -33,52 +35,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		echo "Nome ok";
 		echo "<br>";
     	$nomeValido = 1;
-		echo $nomeValido;
-		echo "<br>";
     	
 	}
 
-	if($cpf != "" && ctype_digit($cpf)){
+	if($cpf != "" && preg_match($patternCPF, $cpf)){
 		echo "cpf ok";
 		echo "<br>";
 		$cpfValido = 1;
-		echo $cpfValido;
-		echo "<br>";
-
 	}
 
-	if($cep != "" && ctype_digit($cep)){
+	if($cep != "" && preg_match($patternCEP, $cep)){
 		echo "cep ok";
 		echo "<br>";
 		$cepValido = 1;
-		echo $cepValido;
-		echo "<br>";
 	}
 
 	//Problema com Endereco
-	if ($testeEndereco != "" && ctype_alpha($endereco)) {
+	if ($endereco != "" && ctype_alpha($endereco)) {
 		echo "endereco ok";
 		echo "<br>";
     	$enderecoValido = 1;
-		echo $enderecoValido;
-		echo "<br>";
 	}
 
 	//Problema com Cidade
-	if ($testeCidade != "" && ctype_alpha($cidade)) {
+	if ($cidade != "" && ctype_alpha($cidade)) {
 		echo "cidade ok";
 		echo "<br>";
     	$cidadeValida = 1;
-		echo $cidadeValida;
-		echo "<br>";
 	}
 
 	if ($estado != "" && ctype_alpha($estado)) {
 		echo "estado ok";
 		echo "<br>";
     	$estadoValido = 1;
-    	echo $estadoValido;
-		echo "<br>";
 	}
 
 	//Se, tudo ok: Então continue para a inserção no banco.
