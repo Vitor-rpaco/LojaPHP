@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$estado = $_POST["estado"];
 
 	//Pattern para Regexes
+	$pattern = "/^[A-Z][a-z]*/m";
 	$patternCPF = "/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/";
 	$patternCEP = "/^[0-9][0-9][0-9][0-9][0-9]-[0-9]{3}$/";
 
@@ -51,14 +52,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 
 	//Problema com Endereco
-	if ($endereco != "" && ctype_alpha($endereco)) {
+	if ($endereco != "" && preg_match($pattern, $endereco)) {
 		echo "endereco ok";
 		echo "<br>";
     	$enderecoValido = 1;
 	}
 
 	//Problema com Cidade
-	if ($cidade != "" && ctype_alpha($cidade)) {
+	if ($cidade != "" && preg_match($pattern, $cidade)) {
 		echo "cidade ok";
 		echo "<br>";
     	$cidadeValida = 1;
