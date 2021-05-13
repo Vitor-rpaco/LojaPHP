@@ -9,8 +9,29 @@
 		<h1 id="title">HOME</h1>
 	</header>
 	<main>
-		<input type="submit" name="toClient">cliente
-		<input type="submit" name="toProduct">produto
+		<input type="submit" name="toClient" onclick="redirecionar('cli')">Cliente
+		<input type="submit" name="toProduct" onclick="redirecionar('prod')">Produto
 	</main>
 </body>
+
+<script type="text/javascript">
+	
+	function redirecionar(value) {
+		
+		switch(value){
+
+			case "cli":
+				location.assign("/CRUDAV1/clienteHome.html");
+			break;
+
+			case "prod":
+				location.assign("/CRUDAV1/adcProdutos.php");
+			break;
+
+			default:
+				alert('Opa, algo deu errado!');
+			break;
+		}
+	}
+</script>
 </html>
