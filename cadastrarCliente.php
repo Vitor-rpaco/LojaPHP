@@ -98,11 +98,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!--******************************************************-->
 <html>
     <body>
-        <button onclick="redirect()">Retornar</button>
+        <button onclick="redirect()"> Retornar </button>
     </body>
     <script>
         function redirect(){
-            location.assign("/CRUDAV1/cadastrarCliente.html");
+            location.assign("/CRUDAV1/clienteHome.html");
         }
     </script>
 </html>

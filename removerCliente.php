@@ -18,16 +18,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$cpfValido = 0;
 
 	if($cpf != "" && preg_match($patternCPF, $cpf)){
-		echo "cpf ok";
-		echo "<br>";
 		$cpfValido = 1;
 	}
 
 	if($cpfValido == 1){
 
+        echo "Removendo cliente com CPF: $cpf";
 		$sql = "DELETE FROM clientes WHERE cpf = '$cpf'";
         $result = $conn->query($sql);
 	}
 }
 
 ?>
+
+<!--******************************************************-->
+<html>
+    <body>
+        <button onclick="redirect()"> Retornar </button>
+    </body>
+    <script>
+        function redirect(){
+            location.assign("/CRUDAV1/clienteHome.html");
+        }
+    </script>
+</html>

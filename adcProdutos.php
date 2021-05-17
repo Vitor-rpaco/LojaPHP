@@ -38,5 +38,4 @@ while ($linha = fgetcsv($arquivo, 1000, ";")) {
 
     $numLinha++;
 }
-
 ?>

@@ -29,3 +29,15 @@ if ($result->num_rows > 0) {
 }
 
 ?>
+
+<!--******************************************************-->
+<html>
+    <body>
+        <button onclick="redirect()"> Retornar </button>
+    </body>
+    <script>
+        function redirect(){
+            location.assign("/CRUDAV1/clienteHome.html");
+        }
+    </script>
+</html>

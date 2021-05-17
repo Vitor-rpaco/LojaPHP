@@ -44,8 +44,21 @@
 				echo "Estado: " . $item["estado"];
 				echo "<br>";
 				echo "CPF: " . $item["cpf"];
+				echo "<br><br>";
 			}
 		}
 	}
 
 ?>
+
+<!--******************************************************-->
+<html>
+    <body>
+        <button onclick="redirect()"> Retornar </button>
+    </body>
+    <script>
+        function redirect(){
+            location.assign("/CRUDAV1/clienteHome.html");
+        }
+    </script>
+</html>
