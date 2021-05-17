@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Conexao falhou: " . $conn->connect_error);
 }
 
-$arquivo = fopen("produtosImp.csv", "r") or die("Não consegui abrir o arquivo, deu erro");
+$arquivo = fopen("uploads/Produtos.csv", "r") or die("Não consegui abrir o arquivo, deu erro");
 $numLinha = 1;
 
 while ($linha = fgetcsv($arquivo, 1000, ";")) {
